@@ -1,0 +1,58 @@
+<div> 
+    <mat-toolbar [ngStyle]="{background:principalColor}">
+      
+      <button mat-icon-button [matMenuTriggerFor]="menuu" class="menu-principal">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <mat-menu #menuu="matMenu">
+        <button mat-menu-item [matMenuTriggerFor]="request">Zona de solicitudes</button>
+        <button mat-menu-item [matMenuTriggerFor]="historicals">Zona de históricos</button>
+        <button mat-button>
+          <a href="javascript:void(0);" (click)="logout()">Salir</a>
+        </button>
+      </mat-menu>
+      
+      <mat-menu #request="matMenu">
+        <button mat-menu-item>Nueva solicitud</button>
+        <button mat-menu-item routerLink="/pending-requests">Solicitudes pendientes</button>
+        <button mat-menu-item routerLink="/requests-processed">Solicitudes procesadas</button>
+      </mat-menu>
+      
+      <mat-menu #historicals="matMenu">
+        <button mat-menu-item routerLink="/check-historical">Consulta de históricos</button>
+      </mat-menu>
+      <a mat-button routerLink="/home">
+          <h1>
+            <span>{{company?.name}}</span>
+          </h1>
+      </a>
+      <span class="menu-spacer"></span>
+      <div fxShow="true" fxHide.lt-md="true">
+        <button mat-button [matMenuTriggerFor]="requestMenu">
+          Zona de solicitudes
+        </button>
+        <mat-menu #requestMenu [overlapTrigger]="false" yPosition="below">
+            <button mat-menu-item routerLink="#">
+                <span>Nueva solicitud</span>
+            </button>
+            <button mat-menu-item routerLink="/pending-requests">
+                <span>Solicitudes pendientes</span>
+            </button>
+            <button mat-menu-item routerLink="/requests-processed">
+                <span>Solicitudes procesadas</span>
+            </button>
+        </mat-menu>
+        <button mat-button [matMenuTriggerFor]="historicalsMenu">
+          Zona de históricos
+        </button>
+        <mat-menu #historicalsMenu [overlapTrigger]="false" yPosition="below">
+            <button mat-menu-item routerLink="/check-historical">
+                <span>Consulta de históricos</span>
+            </button>
+        </mat-menu>
+        <button mat-button>
+          <a href="javascript:void(0);" (click)="logout()">Salir</a>
+        </button>
+      </div>
+    </mat-toolbar>
+  </div>

@@ -1,0 +1,44 @@
+.content-general{
+    display: flex;
+    height: 100%;
+    .content-login {
+        width: 60%;
+        margin: auto;
+        border: 1px solid #bfbfbf;
+        box-shadow: 10px 10px 5px #b0a4c4;
+        vertical-align: middle;
+        text-align: center;
+      
+        .content-icon {
+          width: 100%;
+          .icon-login {
+              color: #673ab7;
+            font-size: 15em;
+            height: 100%;
+            width: 100%;
+            text-align: center;
+          }
+        }
+
+        .error-message {
+          color: red;
+        }
+      
+        .items-login {
+          width: 90%;
+          margin-left: 5%;
+          margin-right: 5%;
+          .item-login {
+            width: 100%;
+          }
+        }
+      
+        .button-login {
+          width: auto;
+          height: 4em;
+          margin-bottom: 2em;
+          display: inline-block;
+          outline: none;
+        }
+      }
+}

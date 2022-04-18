@@ -1,0 +1,6 @@
+<app-tool-bar></app-tool-bar>
+<div class="container-title-request">
+    <h1 [ngStyle]="{color:principalColor}">Histórico</h1>
+</div>
+<app-requests-table [displayedColumns]="displayedColumns"
+                    [customerRequests]="customerRequests"></app-requests-table>

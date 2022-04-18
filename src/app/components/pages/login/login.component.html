@@ -1,0 +1,32 @@
+<div class="content-general">
+    <mat-card class="content-login">
+        <div class="content-icon">
+            <mat-icon color="primary" class="icon-login">account_circle</mat-icon>
+        </div>
+        <p *ngIf="message" class="error-message">{{message}}</p>
+        <form [formGroup]="loginForm" (ngSubmit)="submitLogin(loginForm.value)">
+        <mat-card-content>
+                <div class="items-login">
+                    <mat-form-field appearance="fill" class="item-login">
+                        <mat-label>Ingrese su correo</mat-label>
+                        <input matInput type="email" formControlName="email" placeholder="correo@correo.com" [formControl]="email" required>
+                        <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+                    </mat-form-field>
+                </div>
+        
+                <div class="items-login">
+                    <mat-form-field appearance="fill" class="item-login">
+                        <mat-label>Ingrese su contraseña</mat-label>
+                        <input matInput formControlName="password" [type]="hide ? 'password' : 'text'">
+                        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                        </button>
+                    </mat-form-field>
+                </div>
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-raised-button type="submit" color="primary" class="button-login"><mat-icon>how_to_reg</mat-icon> Iniciar Sesión</button>
+        </mat-card-actions>
+    </form>
+    </mat-card>
+</div>

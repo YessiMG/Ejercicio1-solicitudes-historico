@@ -1,0 +1,29 @@
+.mat-toolbar{
+  height: 7vh;
+  color: white;
+}
+
+div {
+    overflow: inherit;
+}
+
+a{
+    text-decoration: none;
+    white-space: normal;
+}
+
+button{
+    min-width: min-content;
+}
+  
+.menu-spacer {
+  flex: 1 1 auto;
+}
+
+@media (min-width: 960px){
+  .menu-principal{
+    width: 0px;
+    height: 0px;
+    display:none;
+  }
+}
