@@ -14,11 +14,13 @@ export class CheckHistoricalComponent implements OnInit {
   company: Company | undefined;
   displayedColumns: string[] = [];
   customerRequests: CustomerRequest[] | undefined = [];
+  typeCompany: string | null = "";
 
   constructor(private companyService: CompanyService) { 
     this.company = companyService.getCompany();
     this.customerRequests = this.getCustomerRequests();
     this.principalColor = this.company?.color1;
+    this.typeCompany = localStorage.getItem("company");
     this.getColumnsTable();
   }
 

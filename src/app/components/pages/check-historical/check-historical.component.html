@@ -1,6 +1,20 @@
 <app-tool-bar></app-tool-bar>
 <div class="container-title-request">
     <h1 [ngStyle]="{color:principalColor}">Histórico</h1>
+    <section *ngIf="typeCompany == 'empresa1'">
+        <p>Cupo disponible:</p>
+        <p>Consumo mes actual:</p>
+        <p>Tarifa vigente:</p>
+        <p>Stock:</p>
+        <p>Unidades adquiridas:</p>
+    </section>
+    <section *ngIf="typeCompany == 'empresa2'">
+        <p>Consumo mes anterior:</p>
+        <p>Saldo mes anterior:</p>
+        <p>Consumo mes actual:</p>
+        <p>Tarifa vigente:</p>
+    </section>
 </div>
 <app-requests-table [displayedColumns]="displayedColumns"
-                    [customerRequests]="customerRequests"></app-requests-table>
+                    [customerRequests]="customerRequests"
+                    [isHistorical]="true"></app-requests-table>

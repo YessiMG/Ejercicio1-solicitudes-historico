@@ -16,7 +16,7 @@ export class CompanyService {
         id: "empresa1",
         name: "Empresa 1",
         color1: "#03989e",
-        color2: "#5ce1e6",
+        color2: "#8138FF",
         logo: "empresa1.png",
         businessModel: "Por consumo",
         requests: [
