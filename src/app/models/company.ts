@@ -7,5 +7,7 @@ export interface Company {
     color2: string;
     logo: string;
     businessModel: string;
+    currentRate: number;
+    units: number;
     requests: CustomerRequest[];
 }

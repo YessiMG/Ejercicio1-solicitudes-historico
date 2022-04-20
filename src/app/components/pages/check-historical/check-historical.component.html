@@ -1,19 +1,25 @@
 <app-tool-bar></app-tool-bar>
-<div class="container-title-request">
-    <h1 [ngStyle]="{color:principalColor}">Histórico</h1>
-    <section *ngIf="typeCompany == 'empresa1'">
-        <p>Cupo disponible:</p>
-        <p>Consumo mes actual:</p>
-        <p>Tarifa vigente:</p>
-        <p>Stock:</p>
-        <p>Unidades adquiridas:</p>
-    </section>
-    <section *ngIf="typeCompany == 'empresa2'">
-        <p>Consumo mes anterior:</p>
-        <p>Saldo mes anterior:</p>
-        <p>Consumo mes actual:</p>
-        <p>Tarifa vigente:</p>
-    </section>
+<div class="container-title-request content-consumption">
+    <div>
+        <h1 [ngStyle]="{color:principalColor}">Histórico</h1>
+
+        <section *ngIf="typeCompany == 'empresa1'">
+            <p>Cupo disponible: {{stock}}</p>
+            <p>Consumo mes actual: {{consumptionActualMonth}}</p>
+            <p>Tarifa vigente: ${{company?.currentRate | currency:'COP'}}</p>
+            <p>Stock: {{stock}}</p>
+            <p>Unidades adquiridas: {{units}}</p>
+        </section>
+        <section *ngIf="typeCompany == 'empresa2'">
+            <p>Consumo mes anterior: {{consumptionLastMonth}}</p>
+            <p>Saldo mes anterior: {{previousBalance | currency:'COP'}}</p>
+            <p>Consumo mes actual: {{consumptionActualMonth}}</p>
+            <p>Tarifa vigente: ${{company?.currentRate | currency:'COP'}}</p>
+        </section>
+    </div>
+    <div class="chart-box">
+        <app-consumption-chart [customerRequests]="customerRequests"></app-consumption-chart>
+    </div>
 </div>
 <app-requests-table [displayedColumns]="displayedColumns"
                     [customerRequests]="customerRequests"

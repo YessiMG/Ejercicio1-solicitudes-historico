@@ -1,0 +1,16 @@
+.content-consumption {
+    display: flex;
+    justify-content: space-between;
+}
+.chart-box {
+    width: 45%;
+}
+
+@media(max-width: 600px){
+    .content-consumption {
+        display: block;
+    }
+    .chart-box {
+        width: 100%;
+    }
+}
