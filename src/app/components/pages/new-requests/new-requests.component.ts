@@ -52,12 +52,12 @@ export class NewRequestsComponent implements OnInit {
 
       reader.onload = () => {
         let csvData = reader.result;
-        let csvRecordsArray;
-        if(csvData) csvRecordsArray = (<string>csvData).split(/\r\n|\n/);
+        let csvRequestsArray;
+        if(csvData) csvRequestsArray = (<string>csvData).split(/\r\n|\n/);
 
-        let headersRow = this.getHeaderArray(csvRecordsArray);
+        let headersRow = this.getHeaderArray(csvRequestsArray);
 
-        this.requests = this.getDataRecordsArrayFromCSVFile(csvRecordsArray, headersRow.length);
+        this.requests = this.getDataRequestsArrayFromCSVFile(csvRequestsArray, headersRow.length);
       };
 
       reader.onerror = function () {
@@ -74,8 +74,8 @@ export class NewRequestsComponent implements OnInit {
     return file.name.endsWith(".csv");
   }
 
-  getHeaderArray(csvRecordsArr: any) {
-    let headers = (csvRecordsArr[0]).split(';');
+  getHeaderArray(csvRequestArr: any) {
+    let headers = (csvRequestArr[0]).split(';');
     let headerArray = [];
     for (let j = 0; j < headers.length; j++) {
       headerArray.push(headers[j]);
@@ -83,36 +83,36 @@ export class NewRequestsComponent implements OnInit {
     return headerArray;
   }
 
-  getDataRecordsArrayFromCSVFile(csvRecordsArray: any, headerLength: any) {
+  getDataRequestsArrayFromCSVFile(csvRequestsArray: any, headerLength: any) {
     let csvArr = [];
-    for (let i = 1; i < csvRecordsArray.length; i++) {
-      let curruntRecord = (csvRecordsArray[i]).split(';');
-      if (curruntRecord.length == headerLength) {
-        let csvRecord: CustomerRequest = {} as CustomerRequest;
+    for (let i = 1; i < csvRequestsArray.length; i++) {
+      let curruntRequest = (csvRequestsArray[i]).split(';');
+      if (curruntRequest.length == headerLength) {
+        let csvRequest: CustomerRequest = {} as CustomerRequest;
         if(localStorage.getItem('company') == "empresa1"){
-          csvRecord.registrationNumber = curruntRecord[0].trim();
-          csvRecord.documentType = curruntRecord[1].trim();
-          csvRecord.documentNumber = curruntRecord[2].trim();
-          csvRecord.customerName = curruntRecord[3].trim();
-          csvRecord.customerEmail = curruntRecord[4].trim();
-          csvRecord.requestDate = new Date(curruntRecord[5].trim());
-          csvRecord.value = curruntRecord[6].trim();
-          csvRecord.businessType = this.getTypeBusiness();
-          csvRecord.requestNumber = this.generateNumberRequest();
+          csvRequest.registrationNumber = curruntRequest[0].trim();
+          csvRequest.documentType = curruntRequest[1].trim();
+          csvRequest.documentNumber = curruntRequest[2].trim();
+          csvRequest.customerName = curruntRequest[3].trim();
+          csvRequest.customerEmail = curruntRequest[4].trim();
+          csvRequest.requestDate = new Date(curruntRequest[5].trim());
+          csvRequest.value = curruntRequest[6].trim();
+          csvRequest.businessType = this.getTypeBusiness();
+          csvRequest.requestNumber = this.generateNumberRequest();
         }
         else if(localStorage.getItem('company') == "empresa2"){
-          csvRecord.documentType = curruntRecord[0].trim();
-          csvRecord.documentNumber = curruntRecord[1].trim();
-          csvRecord.customerName = curruntRecord[2].trim();
-          csvRecord.customerEmail = curruntRecord[3].trim();
-          csvRecord.registrationNumber = curruntRecord[4].trim();
-          csvRecord.requestDate = new Date(curruntRecord[5].trim());
-          csvRecord.value = curruntRecord[6].trim();
-          csvRecord.businessType = this.getTypeBusiness();
-          csvRecord.requestNumber = this.generateNumberRequest();
+          csvRequest.documentType = curruntRequest[0].trim();
+          csvRequest.documentNumber = curruntRequest[1].trim();
+          csvRequest.customerName = curruntRequest[2].trim();
+          csvRequest.customerEmail = curruntRequest[3].trim();
+          csvRequest.registrationNumber = curruntRequest[4].trim();
+          csvRequest.requestDate = new Date(curruntRequest[5].trim());
+          csvRequest.value = curruntRequest[6].trim();
+          csvRequest.businessType = this.getTypeBusiness();
+          csvRequest.requestNumber = this.generateNumberRequest();
         }
 
-        csvArr.push(csvRecord);
+        csvArr.push(csvRequest);
       }
     }
     return csvArr;
