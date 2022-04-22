@@ -29,10 +29,15 @@
                         <p>Diligencie la plantilla con la información correspondiente</p>
                     </li>
                     <li>
-                        <button mat-raised-button class="button-upload">Cargue aquí la plantilla diligenciada <mat-icon>file_upload</mat-icon></button>
+                        <button mat-raised-button class="button-upload">
+                            Cargue aquí la plantilla diligenciada <mat-icon>file_upload</mat-icon>
+                            <input type="file" #csvReader name="Upload CSV" id="txtFileUpload" (change)="uploadListener($event)" accept=".csv" />
+                        </button>
+                        <button (click)="sendRequests()">Enviar Solicitud</button>
                     </li>
                 </ol>
             </mat-action-row>
           </mat-expansion-panel>
     </mat-accordion>
 </div>
+
