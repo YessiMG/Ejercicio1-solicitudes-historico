@@ -20,9 +20,13 @@ export class NewRequestsTableComponent implements OnInit {
   form: FormGroup = this.fb.group({ 'customerRequests': this.rows});
   company: Company | undefined;
   typeBusiness: string = "";
+  principalColor;
+  secundaryColor;
 
   constructor(private fb: FormBuilder, private companyService: CompanyService, private router: Router) { 
     this.company = companyService.getCompany();
+    this.principalColor = this.company?.color1;
+    this.secundaryColor = this.company?.color2;
     this.getTypeBusiness();
     this.data = [ { 
       registrationNumber: "", 
@@ -75,10 +79,10 @@ export class NewRequestsTableComponent implements OnInit {
   getTypeBusiness(){
     if(this.company?.id == "empresa1"){
       this.typeBusiness = "Pago por consumo";
-      this.displayColumns = ['registrationNumber', 'documentType', 'documentNumber', 'customerName', 'customerEmail', 'businessType', 'requestDate', 'requestNumber', 'value', 'ctl'];
+      this.displayColumns = ['registrationNumber', 'documentType', 'documentNumber', 'customerName', 'customerEmail', 'businessType', 'requestDate', 'requestNumber', 'value'];
     }
     else if(this.company?.id == "empresa2"){
-      this.displayColumns = ['documentType', 'documentNumber', 'customerName', 'customerEmail', 'requestNumber', 'registrationNumber', 'requestDate', 'businessType', 'value', 'ctl'];
+      this.displayColumns = ['documentType', 'documentNumber', 'customerName', 'customerEmail', 'requestNumber', 'registrationNumber', 'requestDate', 'businessType', 'value'];
       this.typeBusiness = "Pago previo";
     }
   }

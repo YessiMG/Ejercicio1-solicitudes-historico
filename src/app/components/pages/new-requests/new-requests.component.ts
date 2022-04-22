@@ -15,7 +15,7 @@ export class NewRequestsComponent implements OnInit {
   company: Company | undefined;
   fileName: string = "";
   public requests: CustomerRequest[] = [];
-  jsondatadisplay:any;
+  uploadFile = false;
   
 
   @ViewChild('csvReader') csvReader: any;
@@ -121,7 +121,6 @@ export class NewRequestsComponent implements OnInit {
   fileReset() {
     this.csvReader.nativeElement.value = "";
     this.requests = [];
-    this.jsondatadisplay = '';
   }
 
   getTypeBusiness(){
@@ -154,7 +153,7 @@ export class NewRequestsComponent implements OnInit {
     }
     if(this.company){
       this.company.requests = this.company?.requests.concat(this.requests);
-      alert("Excel cargado satisfactoriamente");
+      alert("Excel cargado satisfactoriamente, revisa en la bandeja de solicitudes pendientes y/o procesadas");
     }
     this.fileReset();
   }
@@ -163,5 +162,9 @@ export class NewRequestsComponent implements OnInit {
     let dateNew = new Date();
     dateNew.setDate(date.getDate() + days);
     return dateNew;
+  }
+
+  uploadFileButton(){
+    this.uploadFile = true;
   }
 }

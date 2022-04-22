@@ -29,7 +29,7 @@ export class CompanyService {
             customerName: "Yessica Malaver",
             businessType: "Pago por consumo",
             requestDate: new Date("2022-03-16"),
-            requestNumber: "1",
+            requestNumber: "1abc474",
             customerEmail: "malaveryess@gmail.com",
             approvalDate: new Date("2022-03-20"),
             value: 12000000
@@ -41,8 +41,8 @@ export class CompanyService {
             customerName: "Jeisson Malaver",
             businessType: "Pago por consumo",
             requestDate: new Date("2022-04-16"),
-            requestNumber: "1",
-            customerEmail: "malaveryess@gmail.com",
+            requestNumber: "1abc475",
+            customerEmail: "jeisson@gmail.com",
             approvalDate: new Date("2022-04-20"),
             value: 12000000
           },
@@ -53,8 +53,8 @@ export class CompanyService {
             customerName: "Marcela Malaver",
             businessType: "Pago por consumo",
             requestDate: new Date("2022-03-22"),
-            requestNumber: "1",
-            customerEmail: "malaveryess@gmail.com",
+            requestNumber: "1abc476",
+            customerEmail: "marcela@gmail.com",
             approvalDate: new Date("2022-03-31"),
             value: 12000000
           },
@@ -65,7 +65,7 @@ export class CompanyService {
             customerName: "Hernán Malaver",
             businessType: "Pago por consumo",
             requestDate: new Date("2022-04-01"),
-            requestNumber: "2",
+            requestNumber: "1abc433",
             customerEmail: "hernanmalaver@gmail.com",
             value: 8000000
           }
@@ -88,34 +88,34 @@ export class CompanyService {
             customerName: "Universidad de Cundinamarca",
             businessType: "Pago previo ",
             requestDate: new Date("2022-03-03"),
-            requestNumber: "1",
-            customerEmail: "",
+            requestNumber: "1abc444",
+            customerEmail: "udec@ucundinamarca.edu.co",
             approvalDate: new Date("2022-03-10"),
             value: 20000000,
             paymentDate: new Date("2022-03-11")
           },
           {
-            registrationNumber: "0033FMI",
+            registrationNumber: "0034FMI",
             documentType: "NIT",
             documentNumber: "890.680.062-2",
             customerName: "Universidad de Cundinamarca",
             businessType: "Pago previo ",
             requestDate: new Date("2022-03-03"),
-            requestNumber: "1",
-            customerEmail: "",
+            requestNumber: "1abc466",
+            customerEmail: "udec@ucundinamarca.edu.co",
             approvalDate: new Date("2022-03-10"),
             value: 20000000,
             paymentDate: new Date("2022-04-11")
           },
           {
-            registrationNumber: "0033FMI",
+            registrationNumber: "0035FMI",
             documentType: "NIT",
             documentNumber: "890.680.062-2",
             customerName: "Universidad de Cundinamarca",
             businessType: "Pago previo ",
             requestDate: new Date("2022-04-03"),
-            requestNumber: "1",
-            customerEmail: "",
+            requestNumber: "1abc499",
+            customerEmail: "udec@ucundinamarca.edu.co",
             approvalDate: new Date("2022-04-15"),
             value: 20000000,
             paymentDate: new Date("2022-04-11")
@@ -127,8 +127,8 @@ export class CompanyService {
             customerName: "Universidad de Cundinamarca",
             businessType: "Pago previo ",
             requestDate: new Date("2022-04-03"),
-            requestNumber: "1",
-            customerEmail: "",
+            requestNumber: "1abc455",
+            customerEmail: "udec@ucundinamarca.edu.co",
             value: 20000000
           }
         ]

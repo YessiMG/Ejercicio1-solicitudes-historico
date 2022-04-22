@@ -10,7 +10,7 @@
         <mat-expansion-panel>
             <mat-expansion-panel-header>
               <mat-panel-title>
-                <p><strong>Cargar listado desde excel</strong></p>
+                <p [ngStyle]="{color:principalColor}"><strong>Cargar listado desde excel</strong></p>
               </mat-panel-title>
               <mat-panel-description>
                 <p>Esta opción le permitirá descargar y diligenciar el formato en excel para realizar las solicitudes</p>
@@ -22,18 +22,20 @@
                         <a href="assets\downloads\{{fileName}}.csv"
                             target="_blank"
                             download={{fileName}}.csv>
-                            <button mat-raised-button [ngStyle]="{background:secundaryColor}" class="button-download">DESCARGUE AQUÍ LA PLANTILLA DEL EXCEL</button>
+                            <button mat-raised-button [ngStyle]="{background:secundaryColor}" class="button-action">DESCARGUE AQUÍ LA PLANTILLA DEL EXCEL</button>
                         </a>
                     </li>
                     <li>
                         <p>Diligencie la plantilla con la información correspondiente</p>
                     </li>
                     <li>
-                        <button mat-raised-button class="button-upload">
+                        <button mat-raised-button class="button-upload" (click)="uploadFileButton()">
                             Cargue aquí la plantilla diligenciada <mat-icon>file_upload</mat-icon>
-                            <input type="file" #csvReader name="Upload CSV" id="txtFileUpload" (change)="uploadListener($event)" accept=".csv" />
                         </button>
-                        <button (click)="sendRequests()">Enviar Solicitud</button>
+                        <div *ngIf="uploadFile == true">
+                            <input type="file" #csvReader name="Upload CSV" id="txtFileUpload" (change)="uploadListener($event)" accept=".csv" />
+                            <button mat-raised-button *ngIf="requests.length!=0" (click)="sendRequests()" [ngStyle]="{background:secundaryColor}" class="button-action">Enviar Solicitud</button>
+                        </div>
                     </li>
                 </ol>
             </mat-action-row>
