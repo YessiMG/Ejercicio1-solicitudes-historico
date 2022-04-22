@@ -5,7 +5,7 @@ export interface CustomerRequest {
     customerName: string;
     businessType: string;
     requestDate: Date;
-    requestNumber: number;
+    requestNumber: string;
     customerEmail: string;
     approvalDate?: Date;
     value: number;

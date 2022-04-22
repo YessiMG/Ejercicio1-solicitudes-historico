@@ -13,7 +13,7 @@
       </mat-menu>
       
       <mat-menu #request="matMenu">
-        <button mat-menu-item>Nueva solicitud</button>
+        <button mat-menu-item routerLink="/new-requests">Nueva solicitud</button>
         <button mat-menu-item routerLink="/pending-requests">Solicitudes pendientes</button>
         <button mat-menu-item routerLink="/requests-processed">Solicitudes procesadas</button>
       </mat-menu>
@@ -32,7 +32,7 @@
           Zona de solicitudes
         </button>
         <mat-menu #requestMenu [overlapTrigger]="false" yPosition="below">
-            <button mat-menu-item routerLink="#">
+            <button mat-menu-item routerLink="/new-requests">
                 <span>Nueva solicitud</span>
             </button>
             <button mat-menu-item routerLink="/pending-requests">

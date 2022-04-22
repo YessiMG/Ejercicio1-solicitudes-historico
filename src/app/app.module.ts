@@ -19,6 +19,8 @@ import localEs from '@angular/common/locales/es';
 import { RequestsProcessedComponent } from './components/pages/requests-processed/requests-processed.component';
 import { CheckHistoricalComponent } from './components/pages/check-historical/check-historical.component';
 import { ConsumptionChartComponent } from './components/organisms/consumption-chart/consumption-chart.component';
+import { NewRequestsComponent } from './components/pages/new-requests/new-requests.component';
+import { NewRequestsTableComponent } from './components/organisms/new-requests-table/new-requests-table.component';
 
 registerLocaleData(localEs);
 
@@ -32,7 +34,9 @@ registerLocaleData(localEs);
     PendingRequestsComponent,
     RequestsProcessedComponent,
     CheckHistoricalComponent,
-    ConsumptionChartComponent
+    ConsumptionChartComponent,
+    NewRequestsComponent,
+    NewRequestsTableComponent
   ],
   imports: [
     BrowserModule,

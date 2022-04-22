@@ -1,0 +1,38 @@
+<app-tool-bar></app-tool-bar>
+<div class="container-title-request">
+    <h1 [ngStyle]="{color:principalColor}">Nuevas solicitudes</h1>
+</div>
+
+<app-new-requests-table></app-new-requests-table>
+
+<div class="content-accordion">
+    <mat-accordion>
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                <p><strong>Cargar listado desde excel</strong></p>
+              </mat-panel-title>
+              <mat-panel-description>
+                <p>Esta opción le permitirá descargar y diligenciar el formato en excel para realizar las solicitudes</p>
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <mat-action-row>
+                <ol>
+                    <li>
+                        <a href="assets\downloads\{{fileName}}.csv"
+                            target="_blank"
+                            download={{fileName}}.csv>
+                            <button mat-raised-button [ngStyle]="{background:secundaryColor}" class="button-download">DESCARGUE AQUÍ LA PLANTILLA DEL EXCEL</button>
+                        </a>
+                    </li>
+                    <li>
+                        <p>Diligencie la plantilla con la información correspondiente</p>
+                    </li>
+                    <li>
+                        <button mat-raised-button class="button-upload">Cargue aquí la plantilla diligenciada <mat-icon>file_upload</mat-icon></button>
+                    </li>
+                </ol>
+            </mat-action-row>
+          </mat-expansion-panel>
+    </mat-accordion>
+</div>
